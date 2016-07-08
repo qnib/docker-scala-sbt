@@ -10,7 +10,7 @@ ENV SBT_VERSION 0.13.8
 
 # Install Scala
 ## Piping curl directly in tar 
-RUN apt-get install -y curl \
+RUN apt-get install -y curl fakeroot \
  && curl -fsL http://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /root/ \
  && echo >> /root/.bashrc \
  && echo 'export PATH=~/scala-$SCALA_VERSION/bin:$PATH' >> /root/.bashrc
